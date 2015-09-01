@@ -3,6 +3,8 @@ var source = require('vinyl-source-stream');
 var reactify =require('reactify');
 var browserify =require('browserify');
 var concat = require('gulp-concat');
+var lint = require("gulp-eslint");
+
 var config = {
     paths:{
         html:'./src/*.html',
@@ -35,11 +37,17 @@ gulp.task('css',function() {
     gulp.src(config.paths.css)
     .pipe(concat('bundle.css'))
     .pipe(gulp.dest(config.paths.dist+'/css'));
-})
+});
+
+gulp.task('lint',function() {
+    gulp.src(config.paths.js)
+        .pipe(lint({config: 'eslint.config.json'}))
+		.pipe(lint.format());
+});
 
 gulp.task('watch',function() {
     gulp.watch(config.paths.html,['html']);
-    gulp.watch(config.paths.js,['js']);
+    gulp.watch(config.paths.js,['js','lint']);
 });
 
 
@@ -49,5 +57,5 @@ gulp.task('watch',function() {
 
 
 
-gulp.task('default',['html','js','css','watch']);
+gulp.task('default',['html','js','css','lint','watch']);
 

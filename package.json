@@ -11,6 +11,7 @@
     "browserify": "^11.0.1",
     "express": "~3.2.4",
     "gulp-concat": "^2.6.0",
+   "gulp-eslint": "^0.15.0",
     "jquery": "^2.1.4",
     "reactify": "^1.1.1",
     "socket.io": "~0.9.14",
