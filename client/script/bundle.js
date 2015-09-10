@@ -34349,26 +34349,6 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":82}],210:[function(require,module,exports){
-"use strict"
-var React = require("react");
-var Navbar = require("./TopNavbar");
-var MainContainer = require("./MainContainer");
-var RouteHandler =require('react-router').RouteHandler;
-
-var homepage = React.createClass({displayName: "homepage",
-   render: function(){
-     return (
-      React.createElement("div", null, 
-      React.createElement(Navbar, {brand: "React example"}), 
-      React.createElement(RouteHandler, null)
-      )
-    );
-   } 
-});
-
-module.exports =homepage;
-
-},{"./MainContainer":211,"./TopNavbar":216,"react":209,"react-router":40}],211:[function(require,module,exports){
 
 "use strict"
 var React = require("react");
@@ -34390,7 +34370,27 @@ var mainContainer = React.createClass({displayName: "mainContainer",
 
 module.exports =mainContainer;
 
-},{"./MainContent":213,"./SideBar":215,"react":209}],212:[function(require,module,exports){
+},{"./MainContent":213,"./SideBar":215,"react":209}],211:[function(require,module,exports){
+"use strict"
+var React = require("react");
+var Navbar = require("./TopNavbar");
+var MainContainer = require("./MainContainer");
+var RouteHandler =require('react-router').RouteHandler;
+
+var homepage = React.createClass({displayName: "homepage",
+   render: function(){
+     return (
+      React.createElement("div", null, 
+      React.createElement(Navbar, {brand: "React example"}), 
+      React.createElement(RouteHandler, null)
+      )
+    );
+   } 
+});
+
+module.exports =homepage;
+
+},{"./MainContainer":212,"./TopNavbar":216,"react":209,"react-router":40}],212:[function(require,module,exports){
 
 "use strict"
 var React = require("react");
@@ -34534,10 +34534,8 @@ var HomePage = require("./components/HomePage");
 
 var routes = (
   React.createElement(Route, {path: "/", handler: HomePage}, 
-    React.createElement(DefaultRoute, {name: "mainContainer", handler: require("./components/MainContainer")}
-     
-    ), 
-    React.createElement(Route, {name: "test", handler: require("./components/MainContainer2")}, 
+    React.createElement(DefaultRoute, {name: "DefaultContainer", handler: require("./components/DefaultContainer")}), 
+    React.createElement(Route, {name: "test", handler: require("./components/MainContainer")}, 
       React.createElement(Route, {name: "child", handler: require("./components/MainContentTest")})
     )
   )
@@ -34545,4 +34543,4 @@ var routes = (
 
 module.exports =routes;
 
-},{"./components/HomePage":210,"./components/MainContainer":211,"./components/MainContainer2":212,"./components/MainContentTest":214,"react":209,"react-router":40}]},{},[217]);
+},{"./components/DefaultContainer":210,"./components/HomePage":211,"./components/MainContainer":212,"./components/MainContentTest":214,"react":209,"react-router":40}]},{},[217]);

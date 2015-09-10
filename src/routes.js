@@ -8,10 +8,8 @@ var HomePage = require("./components/HomePage");
 
 var routes = (
   <Route path="/" handler={HomePage}>
-    <DefaultRoute name="mainContainer" handler={require("./components/MainContainer")} >
-     
-    </DefaultRoute>
-    <Route name="test" handler={require("./components/MainContainer2")}>
+    <DefaultRoute name="DefaultContainer" handler={require("./components/DefaultContainer")} />
+    <Route name="test" handler={require("./components/MainContainer")}>
       <Route name="child" handler={require("./components/MainContentTest")} />
     </Route>
   </Route>

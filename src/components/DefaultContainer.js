@@ -2,8 +2,7 @@
 "use strict"
 var React = require("react");
 var Sidebar = require("./SideBar");
-var MainContent = require("./MainContentTest");
-var RouteHandler =require('react-router').RouteHandler;
+var MainContent = require("./MainContent");
 
 var mainContainer = React.createClass({
    render: function(){
@@ -11,7 +10,7 @@ var mainContainer = React.createClass({
           <div className="container">
           <div className="row row-offcanvas row-offcanvas-left">
                 <Sidebar />
-                <RouteHandler />
+                <MainContent />
           </div>
           </div>
     );
