@@ -10,9 +10,11 @@
     "bootstrap": "^3.3.5",
     "browserify": "^11.0.1",
     "express": "~3.2.4",
+    "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-   "gulp-eslint": "^0.15.0",
+    "gulp-eslint": "^0.15.0",
     "jquery": "^2.1.4",
+    "react": "^0.13.3",
     "reactify": "^1.1.1",
     "socket.io": "~0.9.14",
     "vinyl-source-stream": "^1.1.0"
