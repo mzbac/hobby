@@ -1,11 +1,15 @@
 "use strict"
 var React = require("react");
+var Navbar = require("./TopNavbar");
+var MainContainer = require("./MainContainer");
+var RouteHandler =require('react-router').RouteHandler;
 
 var homepage = React.createClass({
    render: function(){
      return (
-      <div className="jumbotron">
-        <h1>asdasdasd</h1>
+      <div>
+      <Navbar brand="React example" />
+      <RouteHandler /> 
       </div>
     );
    } 
