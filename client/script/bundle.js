@@ -34353,7 +34353,7 @@ module.exports = require('./lib/React');
 "use strict"
 var React = require("react");
 var Sidebar = require("./SideBar");
-var MainContent = require("./MainContent");
+var MainContent = require("./contents/MainContent");
 
 var mainContainer = React.createClass({displayName: "mainContainer",
    render: function(){
@@ -34370,7 +34370,7 @@ var mainContainer = React.createClass({displayName: "mainContainer",
 
 module.exports =mainContainer;
 
-},{"./MainContent":213,"./SideBar":215,"react":209}],211:[function(require,module,exports){
+},{"./SideBar":213,"./contents/MainContent":215,"react":209}],211:[function(require,module,exports){
 "use strict"
 var React = require("react");
 var Navbar = require("./TopNavbar");
@@ -34390,12 +34390,11 @@ var homepage = React.createClass({displayName: "homepage",
 
 module.exports =homepage;
 
-},{"./MainContainer":212,"./TopNavbar":216,"react":209,"react-router":40}],212:[function(require,module,exports){
+},{"./MainContainer":212,"./TopNavbar":214,"react":209,"react-router":40}],212:[function(require,module,exports){
 
 "use strict"
 var React = require("react");
 var Sidebar = require("./SideBar");
-var MainContent = require("./MainContentTest");
 var RouteHandler =require('react-router').RouteHandler;
 
 var mainContainer = React.createClass({displayName: "mainContainer",
@@ -34413,43 +34412,7 @@ var mainContainer = React.createClass({displayName: "mainContainer",
 
 module.exports =mainContainer;
 
-},{"./MainContentTest":214,"./SideBar":215,"react":209,"react-router":40}],213:[function(require,module,exports){
-
-"use strict"
-var React = require("react");
-
-var mainContent = React.createClass({displayName: "mainContent",
-   render: function(){
-     return (
-
-        React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
-         React.createElement("h1", null, "Shrink Width to Collapse Sidebar")
-        )
-    );
-   } 
-});
-
-module.exports =mainContent;
-
-},{"react":209}],214:[function(require,module,exports){
-
-"use strict"
-var React = require("react");
-
-var mainContent = React.createClass({displayName: "mainContent",
-   render: function(){
-     return (
-
-        React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
-         React.createElement("h1", null, "Test Content 2")
-        )
-    );
-   } 
-});
-
-module.exports =mainContent;
-
-},{"react":209}],215:[function(require,module,exports){
+},{"./SideBar":213,"react":209,"react-router":40}],213:[function(require,module,exports){
  "use strict"
 var React = require("react");
 
@@ -34479,7 +34442,7 @@ var sidebar = React.createClass({displayName: "sidebar",
 
 module.exports =sidebar;
 
-},{"react":209}],216:[function(require,module,exports){
+},{"react":209}],214:[function(require,module,exports){
    "use strict"
 var React = require("react");
 
@@ -34502,6 +34465,42 @@ var topNavbar = React.createClass({displayName: "topNavbar",
 });
 
 module.exports =topNavbar;
+
+},{"react":209}],215:[function(require,module,exports){
+
+"use strict"
+var React = require("react");
+
+var mainContent = React.createClass({displayName: "mainContent",
+   render: function(){
+     return (
+
+        React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
+         React.createElement("h1", null, "Shrink Width to Collapse Sidebar")
+        )
+    );
+   } 
+});
+
+module.exports =mainContent;
+
+},{"react":209}],216:[function(require,module,exports){
+
+"use strict"
+var React = require("react");
+
+var mainContent = React.createClass({displayName: "mainContent",
+   render: function(){
+     return (
+
+        React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
+         React.createElement("h1", null, "Test Content 2")
+        )
+    );
+   } 
+});
+
+module.exports =mainContent;
 
 },{"react":209}],217:[function(require,module,exports){
 $=jQuery = require("jquery");
@@ -34536,11 +34535,11 @@ var routes = (
   React.createElement(Route, {path: "/", handler: HomePage}, 
     React.createElement(DefaultRoute, {name: "DefaultContainer", handler: require("./components/DefaultContainer")}), 
     React.createElement(Route, {name: "test", handler: require("./components/MainContainer")}, 
-      React.createElement(Route, {name: "child", handler: require("./components/MainContentTest")})
+      React.createElement(Route, {name: "child", handler: require("./components/contents/MainContentTest")})
     )
   )
 );
 
 module.exports =routes;
 
-},{"./components/DefaultContainer":210,"./components/HomePage":211,"./components/MainContainer":212,"./components/MainContentTest":214,"react":209,"react-router":40}]},{},[217]);
+},{"./components/DefaultContainer":210,"./components/HomePage":211,"./components/MainContainer":212,"./components/contents/MainContentTest":216,"react":209,"react-router":40}]},{},[217]);

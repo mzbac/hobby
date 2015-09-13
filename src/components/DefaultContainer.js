@@ -2,7 +2,7 @@
 "use strict"
 var React = require("react");
 var Sidebar = require("./SideBar");
-var MainContent = require("./MainContent");
+var MainContent = require("./contents/MainContent");
 
 var mainContainer = React.createClass({
    render: function(){
