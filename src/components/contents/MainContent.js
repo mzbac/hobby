@@ -7,7 +7,7 @@ var mainContent = React.createClass({
      return (
 
         <div className="col-xs-12 col-sm-9 mainContent">
-         <h1>Shrink Width to Collapse Sidebar</h1>
+         <h1>share your location to your friend</h1>
         </div>
     );
    } 

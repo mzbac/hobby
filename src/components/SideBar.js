@@ -8,7 +8,7 @@ var sidebar = React.createClass({
         <div className="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
             <ul className="nav">
               <li className="active"><a href="#">Home</a></li>
-              <li><a href="#">Link 1</a></li>
+              <li><a href="#/test/child">Show your Location</a></li>
               <li><a href="#">Link 2</a></li>
               <li><a href="#">Link 3</a></li>   
               <li><a href="#" data-toggle="collapse" data-target="#sub1">Link 4 (submenu)</a>

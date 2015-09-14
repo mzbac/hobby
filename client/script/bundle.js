@@ -34423,7 +34423,7 @@ var sidebar = React.createClass({displayName: "sidebar",
         React.createElement("div", {className: "col-xs-6 col-sm-3 sidebar-offcanvas", id: "sidebar", role: "navigation"}, 
             React.createElement("ul", {className: "nav"}, 
               React.createElement("li", {className: "active"}, React.createElement("a", {href: "#"}, "Home")), 
-              React.createElement("li", null, React.createElement("a", {href: "#"}, "Link 1")), 
+              React.createElement("li", null, React.createElement("a", {href: "#/test/child"}, "Show your Location")), 
               React.createElement("li", null, React.createElement("a", {href: "#"}, "Link 2")), 
               React.createElement("li", null, React.createElement("a", {href: "#"}, "Link 3")), 
               React.createElement("li", null, React.createElement("a", {href: "#", "data-toggle": "collapse", "data-target": "#sub1"}, "Link 4 (submenu)"), 
@@ -34476,7 +34476,7 @@ var mainContent = React.createClass({displayName: "mainContent",
      return (
 
         React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
-         React.createElement("h1", null, "Shrink Width to Collapse Sidebar")
+         React.createElement("h1", null, "share your location to your friend")
         )
     );
    } 
@@ -34485,22 +34485,36 @@ var mainContent = React.createClass({displayName: "mainContent",
 module.exports =mainContent;
 
 },{"react":209}],216:[function(require,module,exports){
-
 "use strict"
 var React = require("react");
 
 var mainContent = React.createClass({displayName: "mainContent",
-   render: function(){
-     return (
+ getInitialState: function() {
+  return {
+   friends: ['peter','andrew','john']
+  };
+ },
+ render: function() {
+  return (
 
-        React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
-         React.createElement("h1", null, "Test Content 2")
+   React.createElement("div", {className: "col-xs-12 col-sm-9 mainContent"}, 
+         React.createElement("form", {role: "form", method: "post"}, 
+         React.createElement("h3", null, "Select your friend to share your location"), 
+         React.createElement("div", {className: "form-group"}, 
+             React.createElement("select", {className: "form-control", name: "friendId"}, 
+             this.state.friends.map(function(result){
+              return React.createElement("option", null, result)
+             })
+            )
+        ), 
+        React.createElement("button", {type: "submit", className: "btn btn-primary"}, "Share")
         )
-    );
-   } 
+        )
+  );
+ }
 });
 
-module.exports =mainContent;
+module.exports = mainContent;
 
 },{"react":209}],217:[function(require,module,exports){
 $=jQuery = require("jquery");
