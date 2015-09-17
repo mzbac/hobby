@@ -8,6 +8,8 @@ require("bootstrap");
 var React = require("react");
 var Router = require('react-router');
 var routes = require('./routes');
+var WebSocketAction = require('./components/actions/WebSocketAction');
+var WebSocketSatusStore = require('./components/stores/WebSocketSatusStore');
 // var Home = require("./components/HomePage");
 
 
