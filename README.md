@@ -1,1 +1,1 @@
-My hobby Project
+first practice of react and flux
